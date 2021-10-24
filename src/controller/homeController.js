@@ -30,6 +30,7 @@ let getDetailpage = async (req, res) => {
     
     return res.send(JSON.stringify(user))
   }
+  
 
 module.exports = {
     getHomepage, getDetailpage
