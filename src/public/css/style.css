@@ -26,3 +26,14 @@ body {
     background-color: #04AA6D;
     color: white;
   }
+  label {
+    display: block;
+  }
+  .create-user-container{
+    text-align: center;
+    
+  }
+
+  .btn-submit {
+    margin-top: 15px;
+  }

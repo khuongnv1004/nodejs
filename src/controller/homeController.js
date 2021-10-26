@@ -24,14 +24,19 @@ let getHomepage = async (req, res) => {
       return res.render('index',{dataUser: rows})
 }
 
-let getDetailpage = async (req, res) => {
+let getDetailPage = async (req, res) => {
     let id = req.params.userID;
     const [user] = await pool.execute(`SELECT * FROM users WHERE id=?`,[id]);
     
     return res.send(JSON.stringify(user))
   }
-  
+let createUser = async (req, res) => {
+    let {firstName, lastName, email, address} = req.body;
+    await pool.execute(`Insert into users (firstName, lastName, email, address) values (?, ?, ?, ?)`,[firstName, lastName, email, address]);
+    return res.redirect('/')
+
+}
 
 module.exports = {
-    getHomepage, getDetailpage
+    getHomepage, getDetailPage, createUser
 }
