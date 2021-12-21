@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="topnav">
-        <a class="active" href="#home">Home</a>
+        <a class="active" href="/">Home</a>
         <a href="#news">News</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
@@ -37,14 +37,20 @@
                   <td><%= dataUser[i].email %></td>
                   <td>
                     <button type="button">
-                        <a href="/detail/user/<%=dataUser[i].id%>" target="_blank" >Detail</a>
+                        <a href="/detail/user/<%=dataUser[i].id%>" >Detail</a>
                     </button>
-                    <button type="button">
+                    <form action="/edit-user/<%=dataUser[i].id%>" method="GET">
+                      <button type="submit">
                         Edit    
                     </button>
-                    <button type="button">
+                    </form>
+                    <form action="/delete-user" method="POST">
+                      <input type="text" hidden value="<%=dataUser[i].id%>" name="userId">
+                      <button  type="submit">
                         Delete
                     </button>
+                    </form>
+            
                 </td>
                 </tr>
              <% } %>

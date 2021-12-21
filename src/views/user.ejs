@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+      
+      <div>
+        <h2>Users:</h2>
+        <div class="w3-container">
+            <table class="w3-table-all w3-hoverable">
+              <thead>
+                <tr class="w3-light-grey">
+                  <th>ID</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Address</th>
+              </thead>
+                <tr>
+                  <td><%= dataUser.id %></td>
+                  <td><%= dataUser.firstName %></td>
+                  <td><%= dataUser.lastName %></td>
+                  <td><%= dataUser.email %></td>
+                  <td><%= dataUser.address %></td>
+                </tr>
+            </table>
+          </div>
+    
+</body>
+</html>
