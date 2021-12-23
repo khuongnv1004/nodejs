@@ -30,7 +30,8 @@ label {
   display: block;
 }
 .create-user-container,
-.edit-user-container {
+.edit-user-container,
+.sign-in-container {
   text-align: center;
 }
 
