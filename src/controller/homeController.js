@@ -40,7 +40,8 @@ let deleteUser = async (req, res) =>{
 let getEditUser = async (req, res) =>{
   let userID = req.params.id;
   let [user] =  await pool.execute(`SELECT * FROM users WHERE id=?`,[userID]);
-  return res.render('editUser', {dataUser: user[0]})}
+  return res.render('editUser', {dataUser: user[0]})
+}
 
   let updateUser = async (req, res) => {
     let {firstName, lastName, email, address, id} = req.body;
