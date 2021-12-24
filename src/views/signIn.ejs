@@ -16,6 +16,9 @@
     </div>
         <div class="sign-in-container">
             <h3>Sign In:</h3>
+            <%if (error) { %>
+                <h3><%= error %></h3>
+              <% } %>
             <form action="/auth/post-sign-in" method="POST">
             <div>
               <label for="userName">User Name:</label>
@@ -29,7 +32,9 @@
               <button class="btn-sign-in" type="submit">Sign In</button>
             </div>
           </form>
-          <button class="btn-sign-up" type="submit">Sign Up</button>
+          <button type="button">
+            <a href="/auth/sign-up" >Sign Up</a>
+        </button>
         </div>
 </body>
 </html>

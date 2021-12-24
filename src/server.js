@@ -3,6 +3,7 @@ const configViewEngine = require('./config/viewEngine')
 const initWebRouter = require('./route/home')
 const apiRouter = require('./route/api')
 const authRouter = require('./route/auth')
+const cookieParser = require('cookie-parser')
 import connection from './config/connectDB'
 require('dotenv').config();
 const app = express();
@@ -12,6 +13,7 @@ const port = process.env.PORT || 3000;
  
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
+app.use(cookieParser())
 
 configViewEngine(app);
 initWebRouter(app);
